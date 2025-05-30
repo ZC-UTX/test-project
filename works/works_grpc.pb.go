@@ -4,7 +4,7 @@
 // - protoc             v3.19.4
 // source: works.proto
 
-package __
+package works
 
 import (
 	context "context"
