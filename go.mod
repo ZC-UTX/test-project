@@ -1,4 +1,4 @@
-module test-project
+module github.com/zchengytx/testproject
 
 go 1.24
 
