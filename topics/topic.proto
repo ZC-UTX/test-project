@@ -4,14 +4,18 @@ package topics;
 
 option go_package = "/";
 
-message StreamReq {
-  string name = 1;
+message ListTopicReq {
 }
 
-message StreamResp {
-  string greet = 1;
+message ListTopicResp {
+  int64 code = 1;
+  string msg = 2;
+  repeated ListsTopic Lists = 3;
 }
 
-service StreamGreeter {
-  rpc greet(StreamReq) returns (StreamResp);
+message ListsTopic {
+}
+
+service Topic {
+  rpc ListTopic(ListTopicReq) returns (ListTopicResp);
 }

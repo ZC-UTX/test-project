@@ -20,16 +20,14 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type StreamReq struct {
+type ListTopicReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *StreamReq) Reset() {
-	*x = StreamReq{}
+func (x *ListTopicReq) Reset() {
+	*x = ListTopicReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_topic_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -37,13 +35,13 @@ func (x *StreamReq) Reset() {
 	}
 }
 
-func (x *StreamReq) String() string {
+func (x *ListTopicReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StreamReq) ProtoMessage() {}
+func (*ListTopicReq) ProtoMessage() {}
 
-func (x *StreamReq) ProtoReflect() protoreflect.Message {
+func (x *ListTopicReq) ProtoReflect() protoreflect.Message {
 	mi := &file_topic_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -55,28 +53,23 @@ func (x *StreamReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StreamReq.ProtoReflect.Descriptor instead.
-func (*StreamReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListTopicReq.ProtoReflect.Descriptor instead.
+func (*ListTopicReq) Descriptor() ([]byte, []int) {
 	return file_topic_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *StreamReq) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-type StreamResp struct {
+type ListTopicResp struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Greet string `protobuf:"bytes,1,opt,name=greet,proto3" json:"greet,omitempty"`
+	Code  int64         `protobuf:"varint,1,opt,name=code,proto3" json:"code,omitempty"`
+	Msg   string        `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
+	Lists []*ListsTopic `protobuf:"bytes,3,rep,name=Lists,proto3" json:"Lists,omitempty"`
 }
 
-func (x *StreamResp) Reset() {
-	*x = StreamResp{}
+func (x *ListTopicResp) Reset() {
+	*x = ListTopicResp{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_topic_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -84,13 +77,13 @@ func (x *StreamResp) Reset() {
 	}
 }
 
-func (x *StreamResp) String() string {
+func (x *ListTopicResp) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*StreamResp) ProtoMessage() {}
+func (*ListTopicResp) ProtoMessage() {}
 
-func (x *StreamResp) ProtoReflect() protoreflect.Message {
+func (x *ListTopicResp) ProtoReflect() protoreflect.Message {
 	mi := &file_topic_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -102,32 +95,88 @@ func (x *StreamResp) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use StreamResp.ProtoReflect.Descriptor instead.
-func (*StreamResp) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListTopicResp.ProtoReflect.Descriptor instead.
+func (*ListTopicResp) Descriptor() ([]byte, []int) {
 	return file_topic_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *StreamResp) GetGreet() string {
+func (x *ListTopicResp) GetCode() int64 {
 	if x != nil {
-		return x.Greet
+		return x.Code
+	}
+	return 0
+}
+
+func (x *ListTopicResp) GetMsg() string {
+	if x != nil {
+		return x.Msg
 	}
 	return ""
+}
+
+func (x *ListTopicResp) GetLists() []*ListsTopic {
+	if x != nil {
+		return x.Lists
+	}
+	return nil
+}
+
+type ListsTopic struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ListsTopic) Reset() {
+	*x = ListsTopic{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_topic_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListsTopic) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListsTopic) ProtoMessage() {}
+
+func (x *ListsTopic) ProtoReflect() protoreflect.Message {
+	mi := &file_topic_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListsTopic.ProtoReflect.Descriptor instead.
+func (*ListsTopic) Descriptor() ([]byte, []int) {
+	return file_topic_proto_rawDescGZIP(), []int{2}
 }
 
 var File_topic_proto protoreflect.FileDescriptor
 
 var file_topic_proto_rawDesc = []byte{
 	0x0a, 0x0b, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x06, 0x74,
-	0x6f, 0x70, 0x69, 0x63, 0x73, 0x22, 0x1f, 0x0a, 0x09, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x52,
-	0x65, 0x71, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x22, 0x0a, 0x0a, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d,
-	0x52, 0x65, 0x73, 0x70, 0x12, 0x14, 0x0a, 0x05, 0x67, 0x72, 0x65, 0x65, 0x74, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x67, 0x72, 0x65, 0x65, 0x74, 0x32, 0x3f, 0x0a, 0x0d, 0x53, 0x74,
-	0x72, 0x65, 0x61, 0x6d, 0x47, 0x72, 0x65, 0x65, 0x74, 0x65, 0x72, 0x12, 0x2e, 0x0a, 0x05, 0x67,
-	0x72, 0x65, 0x65, 0x74, 0x12, 0x11, 0x2e, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x73, 0x2e, 0x53, 0x74,
-	0x72, 0x65, 0x61, 0x6d, 0x52, 0x65, 0x71, 0x1a, 0x12, 0x2e, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x73,
-	0x2e, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x42, 0x03, 0x5a, 0x01, 0x2f,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x70, 0x69, 0x63, 0x73, 0x22, 0x0e, 0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x6f, 0x70,
+	0x69, 0x63, 0x52, 0x65, 0x71, 0x22, 0x5f, 0x0a, 0x0d, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x6f, 0x70,
+	0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73,
+	0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x28, 0x0a, 0x05,
+	0x4c, 0x69, 0x73, 0x74, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x74, 0x6f,
+	0x70, 0x69, 0x63, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x73, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x52,
+	0x05, 0x4c, 0x69, 0x73, 0x74, 0x73, 0x22, 0x0c, 0x0a, 0x0a, 0x4c, 0x69, 0x73, 0x74, 0x73, 0x54,
+	0x6f, 0x70, 0x69, 0x63, 0x32, 0x41, 0x0a, 0x05, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x12, 0x38, 0x0a,
+	0x09, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x12, 0x14, 0x2e, 0x74, 0x6f, 0x70,
+	0x69, 0x63, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x6f, 0x70, 0x69, 0x63, 0x52, 0x65, 0x71,
+	0x1a, 0x15, 0x2e, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x73, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x6f,
+	0x70, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x42, 0x03, 0x5a, 0x01, 0x2f, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -142,19 +191,21 @@ func file_topic_proto_rawDescGZIP() []byte {
 	return file_topic_proto_rawDescData
 }
 
-var file_topic_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_topic_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_topic_proto_goTypes = []any{
-	(*StreamReq)(nil),  // 0: topics.StreamReq
-	(*StreamResp)(nil), // 1: topics.StreamResp
+	(*ListTopicReq)(nil),  // 0: topics.ListTopicReq
+	(*ListTopicResp)(nil), // 1: topics.ListTopicResp
+	(*ListsTopic)(nil),    // 2: topics.ListsTopic
 }
 var file_topic_proto_depIdxs = []int32{
-	0, // 0: topics.StreamGreeter.greet:input_type -> topics.StreamReq
-	1, // 1: topics.StreamGreeter.greet:output_type -> topics.StreamResp
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: topics.ListTopicResp.Lists:type_name -> topics.ListsTopic
+	0, // 1: topics.Topic.ListTopic:input_type -> topics.ListTopicReq
+	1, // 2: topics.Topic.ListTopic:output_type -> topics.ListTopicResp
+	2, // [2:3] is the sub-list for method output_type
+	1, // [1:2] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_topic_proto_init() }
@@ -164,7 +215,7 @@ func file_topic_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_topic_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*StreamReq); i {
+			switch v := v.(*ListTopicReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -176,7 +227,19 @@ func file_topic_proto_init() {
 			}
 		}
 		file_topic_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*StreamResp); i {
+			switch v := v.(*ListTopicResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_topic_proto_msgTypes[2].Exporter = func(v any, i int) any {
+			switch v := v.(*ListsTopic); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -194,7 +257,7 @@ func file_topic_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_topic_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

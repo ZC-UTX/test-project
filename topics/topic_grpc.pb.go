@@ -19,90 +19,90 @@ import (
 const _ = grpc.SupportPackageIsVersion8
 
 const (
-	StreamGreeter_Greet_FullMethodName = "/topics.StreamGreeter/greet"
+	Topic_ListTopic_FullMethodName = "/topics.Topic/ListTopic"
 )
 
-// StreamGreeterClient is the client API for StreamGreeter service.
+// TopicClient is the client API for Topic service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type StreamGreeterClient interface {
-	Greet(ctx context.Context, in *StreamReq, opts ...grpc.CallOption) (*StreamResp, error)
+type TopicClient interface {
+	ListTopic(ctx context.Context, in *ListTopicReq, opts ...grpc.CallOption) (*ListTopicResp, error)
 }
 
-type streamGreeterClient struct {
+type topicClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewStreamGreeterClient(cc grpc.ClientConnInterface) StreamGreeterClient {
-	return &streamGreeterClient{cc}
+func NewTopicClient(cc grpc.ClientConnInterface) TopicClient {
+	return &topicClient{cc}
 }
 
-func (c *streamGreeterClient) Greet(ctx context.Context, in *StreamReq, opts ...grpc.CallOption) (*StreamResp, error) {
+func (c *topicClient) ListTopic(ctx context.Context, in *ListTopicReq, opts ...grpc.CallOption) (*ListTopicResp, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(StreamResp)
-	err := c.cc.Invoke(ctx, StreamGreeter_Greet_FullMethodName, in, out, cOpts...)
+	out := new(ListTopicResp)
+	err := c.cc.Invoke(ctx, Topic_ListTopic_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// StreamGreeterServer is the server API for StreamGreeter service.
-// All implementations must embed UnimplementedStreamGreeterServer
+// TopicServer is the server API for Topic service.
+// All implementations must embed UnimplementedTopicServer
 // for forward compatibility
-type StreamGreeterServer interface {
-	Greet(context.Context, *StreamReq) (*StreamResp, error)
-	mustEmbedUnimplementedStreamGreeterServer()
+type TopicServer interface {
+	ListTopic(context.Context, *ListTopicReq) (*ListTopicResp, error)
+	mustEmbedUnimplementedTopicServer()
 }
 
-// UnimplementedStreamGreeterServer must be embedded to have forward compatible implementations.
-type UnimplementedStreamGreeterServer struct {
+// UnimplementedTopicServer must be embedded to have forward compatible implementations.
+type UnimplementedTopicServer struct {
 }
 
-func (UnimplementedStreamGreeterServer) Greet(context.Context, *StreamReq) (*StreamResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Greet not implemented")
+func (UnimplementedTopicServer) ListTopic(context.Context, *ListTopicReq) (*ListTopicResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTopic not implemented")
 }
-func (UnimplementedStreamGreeterServer) mustEmbedUnimplementedStreamGreeterServer() {}
+func (UnimplementedTopicServer) mustEmbedUnimplementedTopicServer() {}
 
-// UnsafeStreamGreeterServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to StreamGreeterServer will
+// UnsafeTopicServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to TopicServer will
 // result in compilation errors.
-type UnsafeStreamGreeterServer interface {
-	mustEmbedUnimplementedStreamGreeterServer()
+type UnsafeTopicServer interface {
+	mustEmbedUnimplementedTopicServer()
 }
 
-func RegisterStreamGreeterServer(s grpc.ServiceRegistrar, srv StreamGreeterServer) {
-	s.RegisterService(&StreamGreeter_ServiceDesc, srv)
+func RegisterTopicServer(s grpc.ServiceRegistrar, srv TopicServer) {
+	s.RegisterService(&Topic_ServiceDesc, srv)
 }
 
-func _StreamGreeter_Greet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(StreamReq)
+func _Topic_ListTopic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTopicReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StreamGreeterServer).Greet(ctx, in)
+		return srv.(TopicServer).ListTopic(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: StreamGreeter_Greet_FullMethodName,
+		FullMethod: Topic_ListTopic_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StreamGreeterServer).Greet(ctx, req.(*StreamReq))
+		return srv.(TopicServer).ListTopic(ctx, req.(*ListTopicReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// StreamGreeter_ServiceDesc is the grpc.ServiceDesc for StreamGreeter service.
+// Topic_ServiceDesc is the grpc.ServiceDesc for Topic service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var StreamGreeter_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "topics.StreamGreeter",
-	HandlerType: (*StreamGreeterServer)(nil),
+var Topic_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "topics.Topic",
+	HandlerType: (*TopicServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "greet",
-			Handler:    _StreamGreeter_Greet_Handler,
+			MethodName: "ListTopic",
+			Handler:    _Topic_ListTopic_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
