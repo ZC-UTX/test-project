@@ -4,6 +4,30 @@ package stream;
 
 option go_package = "/";
 
+message ListWorksReq {
+  string Title = 1;
+  string Desc = 2;
+  int64 MusicId = 3;
+  string WorkType = 4;
+  string IpAddress = 5;
+  string WorkPermission = 6;
+}
+
+message ListWorksResp {
+  int64 code = 1;
+  string msg = 2;
+  repeated List Lists = 3;
+}
+
+message List{
+  string Title = 1;
+  string Desc = 2;
+  int64 MusicId = 3;
+  string WorkType = 4;
+  string IpAddress = 5;
+  string WorkPermission = 6;
+}
+
 message CreatedWorksReq {
   string Title = 1;
   string Desc = 2;
@@ -19,5 +43,6 @@ message CreatedWorksResp {
 }
 
 service Works {
+  rpc ListWorks(ListWorksReq) returns (ListWorksResp);
   rpc CreatedWorks(CreatedWorksReq) returns (CreatedWorksResp);
 }
