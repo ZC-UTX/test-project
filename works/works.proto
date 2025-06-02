@@ -11,12 +11,15 @@ message ListWorksReq {
   string WorkType = 4;
   string IpAddress = 5;
   string WorkPermission = 6;
+  int64 Page = 7;
+  int64 PageSize = 8;
 }
 
 message ListWorksResp {
   int64 code = 1;
   string msg = 2;
   repeated List Lists = 3;
+  int64 Count = 4;
 }
 
 message List{
