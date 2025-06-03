@@ -1,6 +1,7 @@
 package config
 
 import (
+	"context"
 	__ "github.com/zchengutx/testproject/topics"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
@@ -11,4 +12,5 @@ var (
 	Config      AppConfig
 	Log         = zap.NewExample()
 	TopicClient __.TopicClient
+	Ctx         = context.Background()
 )

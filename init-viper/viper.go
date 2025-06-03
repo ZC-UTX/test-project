@@ -8,7 +8,7 @@ import (
 )
 
 func InitViper() {
-	viper.SetConfigFile("../config.yaml")
+	viper.SetConfigFile("./config.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
 		config.Log.Error("viper.ReadInConfig failed", zap.Error(err))
