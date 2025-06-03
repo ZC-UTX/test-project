@@ -1,4 +1,4 @@
-package main
+package init_grpc
 
 import (
 	"flag"
@@ -9,7 +9,7 @@ import (
 	"log"
 )
 
-func main() {
+func InitGrpc() {
 	flag.Parse()
 	// Set up a connection to the server.
 	conn, err := grpc.NewClient("127.0.0.1:50051", grpc.WithTransportCredentials(insecure.NewCredentials()))

@@ -1,4 +1,4 @@
-package main
+package init_viper
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"go.uber.org/zap"
 )
 
-func main() {
+func InitViper() {
 	viper.SetConfigFile("../config.yaml")
 	err := viper.ReadInConfig()
 	if err != nil {
