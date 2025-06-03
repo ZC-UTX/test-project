@@ -13,6 +13,7 @@ message ListWorksReq {
   string WorkPermission = 6;
   int64 Page = 7;
   int64 PageSize = 8;
+  int64 UserId = 9;
 }
 
 message ListWorksResp {
