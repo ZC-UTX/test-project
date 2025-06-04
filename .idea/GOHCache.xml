@@ -10,6 +10,13 @@
             </set>
           </value>
         </entry>
+        <entry key="CreateWorkReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/handler/request/works.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="CreatedWorksReq">
           <value>
             <set>
@@ -42,6 +49,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/topics/topic.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ListWorkReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/handler/request/works.go" />
             </set>
           </value>
         </entry>
@@ -191,10 +205,65 @@
     </option>
     <option name="scannedPathMapping">
       <map>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/gin-vue-admin-main/server/initialize/router_biz.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749009629417" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/basic/cmd/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749009562818" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/basic/config/global.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749007447504" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/handler/api/works.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749008736588" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/handler/request/works.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749006133019" />
+              <option name="schema">
+                <list>
+                  <option value="CreateWorkReq" />
+                  <option value="ListWorkReq" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/router/works.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749006562825" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/works_server/basic/cmd/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749011014783" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/works_server/handler/model/works.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749003324544" />
+              <option name="lastModified" value="1749010923257" />
               <option name="schema">
                 <list>
                   <option value="VideoWorks" />
@@ -206,7 +275,7 @@
         <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/works_server/handler/service/works.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1749003282120" />
+              <option name="lastModified" value="1749010904372" />
               <option name="schema">
                 <list>
                   <option value="Server" />
@@ -225,7 +294,7 @@
         <entry key="file://$PROJECT_DIR$/cmd/mian.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1748955546810" />
+              <option name="lastModified" value="1749011131415" />
             </ScannedPath>
           </value>
         </entry>
@@ -246,7 +315,7 @@
         <entry key="file://$PROJECT_DIR$/config/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1748955546834" />
+              <option name="lastModified" value="1749011138342" />
             </ScannedPath>
           </value>
         </entry>
@@ -254,6 +323,13 @@
           <value>
             <ScannedPath>
               <option name="lastModified" value="1748955546860" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/init-grpc/works.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1749011152024" />
             </ScannedPath>
           </value>
         </entry>
@@ -379,11 +455,13 @@
     <option name="tableStructMapping">
       <map>
         <entry key="app_config" value="AppConfig" />
+        <entry key="create_work_req" value="CreateWorkReq" />
         <entry key="created_works_req" value="CreatedWorksReq" />
         <entry key="created_works_resp" value="CreatedWorksResp" />
         <entry key="list" value="List" />
         <entry key="list_topic_req" value="ListTopicReq" />
         <entry key="list_topic_resp" value="ListTopicResp" />
+        <entry key="list_work_req" value="ListWorkReq" />
         <entry key="list_works_req" value="ListWorksReq" />
         <entry key="list_works_resp" value="ListWorksResp" />
         <entry key="lists_topic" value="ListsTopic" />
