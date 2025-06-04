@@ -10,6 +10,6 @@ import (
 func init() {
 	init_viper.InitViper()
 	init_mysql.InitMysql()
-	init_grpc.InitGrpc()
 	init_redis.ExampleNewClient()
+	init_grpc.InitGrpc()
 }

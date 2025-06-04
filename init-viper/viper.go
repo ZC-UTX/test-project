@@ -1,7 +1,6 @@
 package init_viper
 
 import (
-	"fmt"
 	"github.com/spf13/viper"
 	"github.com/zchengutx/testproject/config"
 	"go.uber.org/zap"
@@ -18,5 +17,5 @@ func InitViper() {
 		config.Log.Error("viper.Unmarshal failed", zap.Error(err))
 
 	}
-	config.Log.Info(fmt.Sprintf("Video Config %+v", config.Config))
+	config.Log.Info("viper.Unmarshal success")
 }
