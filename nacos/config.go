@@ -2,8 +2,7 @@ package nacos
 
 import (
 	"github.com/spf13/viper"
-	"github.com/zchengutx/testproject/config"
-	"go.uber.org/zap"
+	"log"
 )
 
 type Config struct {
@@ -22,7 +21,7 @@ func InitViper(configPath string) (Config, error) {
 	viper.SetConfigFile(configPath)
 	err := viper.ReadInConfig()
 	if err != nil {
-		config.Log.Error("viper.ReadInConfig failed", zap.Error(err))
+		log.Println("viper.ReadInConfig error:", err)
 	}
 	err = viper.Unmarshal(&Conf)
 

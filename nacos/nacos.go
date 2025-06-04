@@ -9,7 +9,7 @@ import (
 // InitNacos 初始化 Nacos 客户端并加载配置
 func InitNacos(configPath string) (string, error) {
 	// 调用LoadConfig加载配置文件
-	nacos, err := LoadConfig(configPath)
+	nacos, err := InitViper(configPath)
 	if err != nil {
 		panic("nacos配置解析失败")
 	}
