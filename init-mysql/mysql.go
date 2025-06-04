@@ -20,6 +20,16 @@ type Mysql struct {
 	Database string
 }
 
+func NewMysql(user string, password string, host string, port string, database string) *Mysql {
+	return &Mysql{
+		User:     user,
+		Password: password,
+		Host:     host,
+		Port:     port,
+		Database: database,
+	}
+}
+
 func (m *Mysql) InitMysql() *gorm.DB {
 
 	var err error
