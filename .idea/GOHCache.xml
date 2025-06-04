@@ -3,6 +3,13 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
+        <entry key="AppConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/config/config.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="CreatedWorksReq">
           <value>
             <set>
@@ -59,6 +66,62 @@
             </set>
           </value>
         </entry>
+        <entry key="Mysql">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealUserReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RealUserResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Redis">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendSmsReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendSmsResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Server">
           <value>
             <set>
@@ -70,6 +133,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/topics/topic_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UnimplementedUserServer">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user_grpc.pb.go" />
             </set>
           </value>
         </entry>
@@ -94,6 +164,13 @@
             </set>
           </value>
         </entry>
+        <entry key="userClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/user/user_grpc.pb.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="worksClient">
           <value>
             <set>
@@ -105,6 +182,7 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/topics/topic.pb.go" />
+              <option value="file://$PROJECT_DIR$/user/user.pb.go" />
               <option value="file://$PROJECT_DIR$/works/works.pb.go" />
             </set>
           </value>
@@ -113,17 +191,10 @@
     </option>
     <option name="scannedPathMapping">
       <map>
-        <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/api/basic/cmd/main.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1748786920180" />
-            </ScannedPath>
-          </value>
-        </entry>
         <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/works_server/handler/model/works.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1748784801452" />
+              <option name="lastModified" value="1749003324544" />
               <option name="schema">
                 <list>
                   <option value="VideoWorks" />
@@ -135,7 +206,7 @@
         <entry key="file://$PROJECT_DIR$/../short_video_live_streaming/videoClient/works_server/handler/service/works.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1748786825677" />
+              <option name="lastModified" value="1749003282120" />
               <option name="schema">
                 <list>
                   <option value="Server" />
@@ -144,10 +215,80 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/SendSms/sendSms.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955947077" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/cmd/mian.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546810" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546827" />
+              <option name="schema">
+                <list>
+                  <option value="AppConfig" />
+                  <option value="Mysql" />
+                  <option value="Redis" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/config/global.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546834" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/init-grpc/grpc.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546860" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/init-mysql/mysql.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546866" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/init-redis/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546873" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/init-viper/viper.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955546881" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/nickName/nickName.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955947083" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/topics/topic.pb.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1748784059619" />
+              <option name="lastModified" value="1748855189966" />
               <option name="schema">
                 <list>
                   <option value="ListTopicReq" />
@@ -167,6 +308,37 @@
                 <list>
                   <option value="topicClient" />
                   <option value="UnimplementedTopicServer" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/user/user.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955947090" />
+              <option name="schema">
+                <list>
+                  <option value="RegisterReq" />
+                  <option value="RegisterResp" />
+                  <option value="SendSmsReq" />
+                  <option value="SendSmsResp" />
+                  <option value="RealUserReq" />
+                  <option value="RealUserResp" />
+                  <option value="x" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/user/user_grpc.pb.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1748955947108" />
+              <option name="schema">
+                <list>
+                  <option value="userClient" />
+                  <option value="UnimplementedUserServer" />
                 </list>
               </option>
             </ScannedPath>
@@ -202,24 +374,11 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/../../../gocode/monthMax05/user/api-gateway/handler/api/online.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1748786519087" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/../../../gocode/monthMax05/user/api-gateway/handler/api/order.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1748786795466" />
-            </ScannedPath>
-          </value>
-        </entry>
       </map>
     </option>
     <option name="tableStructMapping">
       <map>
+        <entry key="app_config" value="AppConfig" />
         <entry key="created_works_req" value="CreatedWorksReq" />
         <entry key="created_works_resp" value="CreatedWorksResp" />
         <entry key="list" value="List" />
@@ -228,15 +387,25 @@
         <entry key="list_works_req" value="ListWorksReq" />
         <entry key="list_works_resp" value="ListWorksResp" />
         <entry key="lists_topic" value="ListsTopic" />
+        <entry key="mysql" value="Mysql" />
+        <entry key="real_user_req" value="RealUserReq" />
+        <entry key="real_user_resp" value="RealUserResp" />
+        <entry key="redis" value="Redis" />
+        <entry key="register_req" value="RegisterReq" />
+        <entry key="register_resp" value="RegisterResp" />
+        <entry key="send_sms_req" value="SendSmsReq" />
+        <entry key="send_sms_resp" value="SendSmsResp" />
         <entry key="server" value="Server" />
         <entry key="topic_client" value="topicClient" />
         <entry key="unimplemented_topic_server" value="UnimplementedTopicServer" />
+        <entry key="unimplemented_user_server" value="UnimplementedUserServer" />
         <entry key="unimplemented_works_server" value="UnimplementedWorksServer" />
+        <entry key="user_client" value="userClient" />
         <entry key="video_works" value="VideoWorks" />
         <entry key="works_client" value="worksClient" />
         <entry key="x" value="x" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1748784072432" />
+    <option name="lastTimeChecked" value="1749002745836" />
   </component>
 </project>
