@@ -10,6 +10,7 @@ import (
 )
 
 func InitMysql() {
+
 	var err error
 	conf := config.Config.Mysql
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", conf.User, conf.Password, conf.Host, conf.Port, conf.Database)
@@ -17,6 +18,7 @@ func InitMysql() {
 	if err != nil {
 		config.Log.Error("gorm.Open failed", zap.Error(err))
 	}
+
 	config.Log.Info(fmt.Sprintf("Mysql connect success, %+v", config.DB))
 
 	sqlDB, err := config.DB.DB()

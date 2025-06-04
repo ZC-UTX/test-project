@@ -17,5 +17,6 @@ func InitGrpc() {
 		log.Fatalf("did not connect: %v", err)
 	}
 	config.TopicClient = __.NewTopicClient(conn)
+	config.Log.Info("gRPC init success")
 
 }
