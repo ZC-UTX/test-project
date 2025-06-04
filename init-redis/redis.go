@@ -13,6 +13,14 @@ type Redis struct {
 	DB       int
 }
 
+func NewRedis(addr, password string, db int) *Redis {
+	return &Redis{
+		Addr:     addr,
+		Password: password,
+		DB:       db,
+	}
+}
+
 func ExampleNewClient(config Redis) (*redis.Client, string) {
 	Rdb = redis.NewClient(&redis.Options{
 		Addr:     config.Addr,     // use default Addr
