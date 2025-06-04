@@ -9,12 +9,24 @@ import (
 	"time"
 )
 
-func InitMysql() {
+var (
+	DB *gorm.DB
+)
+
+type Mysql struct {
+	User     string
+	Password string
+	Host     string
+	Port     string
+	Database string
+}
+
+func (m *Mysql) InitMysql() *gorm.DB {
 
 	var err error
-	conf := config.Config.Mysql
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", conf.User, conf.Password, conf.Host, conf.Port, conf.Database)
-	config.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", m.User, m.Password, m.Host, m.Port, m.Database)
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		config.Log.Error("gorm.Open failed", zap.Error(err))
 	}
@@ -32,4 +44,5 @@ func InitMysql() {
 	// SetConnMaxLifetime sets the maximum amount of time a connection may be reused.
 	sqlDB.SetConnMaxLifetime(time.Hour)
 
+	return DB
 }
