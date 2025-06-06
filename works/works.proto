@@ -46,7 +46,55 @@ message CreatedWorksResp {
   string msg = 2;
 }
 
+message DeleteWorksReq {
+  int64 Id = 1;
+}
+
+message DeleteWorksResp {
+  int64 code = 1;
+  string msg = 2;
+}
+
+message InfoWorksReq {
+  int64 Id = 1;
+}
+
+message InfoWorksResp {
+  int64 code = 1;
+  string msg = 2;
+  message Works{
+    string Title = 1;
+    string Desc = 2;
+    int64 MusicId = 3;
+    string WorkType = 4;
+    string IpAddress = 5;
+    string WorkPermission = 6;
+    int32 LikeCount = 7;
+    int32 CommentCount = 8;
+    int32 ShareCount = 9;
+    int32 CollectCount = 10;
+    int32 BrowseCount = 11;
+  }
+}
+
+message UpdateWorksReq {
+  int64 Id = 1;
+  string workPermission = 2;
+  string title = 3;
+  string desc = 4;
+  int64 music_id = 5;
+  string work_type = 6;
+}
+
+message UpdateWorksResp {
+  int64 code = 1;
+  string msg = 2;
+}
+
 service Works {
   rpc ListWorks(ListWorksReq) returns (ListWorksResp);
   rpc CreatedWorks(CreatedWorksReq) returns (CreatedWorksResp);
+  rpc DeleteWorks(DeleteWorksReq) returns (DeleteWorksResp);
+  rpc InfoWorks(InfoWorksReq) returns (InfoWorksResp);
+  rpc UpdateWorks(UpdateWorksReq) returns (UpdateWorksResp);
 }
