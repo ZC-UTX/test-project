@@ -21,17 +21,17 @@ func NewRedis(addr, password string, db int) *Redis {
 	}
 }
 
-func ExampleNewClient(config Redis) (*redis.Client, string) {
+func (r *Redis) ExampleNewClient() (*redis.Client, string) {
 	Rdb = redis.NewClient(&redis.Options{
-		Addr:     config.Addr,     // use default Addr
-		Password: config.Password, // no password set
-		DB:       config.DB,       // use default DB
+		Addr:     r.Addr,
+		Password: r.Password,
+		DB:       r.DB,
 	})
 
 	err := Rdb.Ping(context.Background()).Err()
 
 	if err != nil {
-		return nil, "redis连接失败"
+		return nil, "redis init failed"
 	}
 	return Rdb, ""
 }

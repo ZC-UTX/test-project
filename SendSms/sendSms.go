@@ -6,7 +6,6 @@ import (
 	dysmsapi20170525 "github.com/alibabacloud-go/dysmsapi-20170525/v4/client"
 	util "github.com/alibabacloud-go/tea-utils/v2/service"
 	"github.com/alibabacloud-go/tea/tea"
-	config2 "user_server/basic/config"
 )
 
 // Description:
@@ -16,14 +15,14 @@ import (
 // @return Client
 //
 // @throws Exception
-func CreateClient() (_result *dysmsapi20170525.Client, _err error) {
+func CreateClient(AccessKeyID, AccessKeySecret string) (_result *dysmsapi20170525.Client, _err error) {
 	// 工程代码泄露可能会导致 AccessKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考。
 	// 建议使用更安全的 STS 方式，更多鉴权访问方式请参见：https://help.aliyun.com/document_detail/378661.html。
 	config := &openapi.Config{
 		// 必填，请确保代码运行环境设置了环境变量 ALIBABA_CLOUD_ACCESS_KEY_ID。
-		AccessKeyId: tea.String(config2.Config.ALiYun.AccessKeyID),
+		AccessKeyId: tea.String(AccessKeyID),
 		// 必填，请确保代码运行环境设置了环境变量 ALIBABA_CLOUD_ACCESS_KEY_SECRET。
-		AccessKeySecret: tea.String(config2.Config.ALiYun.AccessKeySecret),
+		AccessKeySecret: tea.String(AccessKeySecret),
 	}
 	// Endpoint 请参考 https://api.aliyun.com/product/Dysmsapi
 	config.Endpoint = tea.String("dysmsapi.aliyuncs.com")
@@ -32,8 +31,8 @@ func CreateClient() (_result *dysmsapi20170525.Client, _err error) {
 	return _result, _err
 }
 
-func SendSms(tel string, code string) (resp *dysmsapi20170525.SendSmsResponse, _err error) {
-	client, _err := CreateClient()
+func SendSms(tel string, code string, AccessKeyID, AccessKeySecret string) (resp *dysmsapi20170525.SendSmsResponse, _err error) {
+	client, _err := CreateClient(AccessKeyID, AccessKeySecret)
 	if _err != nil {
 		return resp, _err
 	}

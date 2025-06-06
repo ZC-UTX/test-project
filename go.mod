@@ -8,6 +8,7 @@ require (
 	github.com/alibabacloud-go/tea v1.3.9
 	github.com/alibabacloud-go/tea-utils/v2 v2.0.7
 	github.com/go-redis/redis/v8 v8.11.5
+	github.com/nacos-group/nacos-sdk-go v1.1.5
 	github.com/nacos-group/nacos-sdk-go/v2 v2.3.2
 	github.com/spf13/viper v1.20.1
 	google.golang.org/grpc v1.72.2
