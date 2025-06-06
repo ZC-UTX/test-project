@@ -16,11 +16,11 @@ type Mysql struct {
 	User     string
 	Password string
 	Host     string
-	Port     string
+	Port     int
 	Database string
 }
 
-func NewMysql(user string, password string, host string, port string, database string) *Mysql {
+func NewMysql(user string, password string, host string, port int, database string) *Mysql {
 	return &Mysql{
 		User:     user,
 		Password: password,
